@@ -1,0 +1,30 @@
+{
+    "result": "ok",
+    "reason": "",
+    "page_num": 1,
+    "page_size": 5,
+    "total_page": 15,
+    "knowledge_list": [
+        {
+            "knowledge_id": 1,
+            "question": "问题1",
+            "answer": "问题答案"
+        }, {
+            "knowledge_id": 2,
+            "question": "问题2",
+            "answer": "问题答案"
+        }, {
+            "knowledge_id": 1,
+            "question": "问题1",
+            "answer": "问题答案"
+        }, {
+            "knowledge_id": 2,
+            "question": "问题2",
+            "answer": "问题答案"
+        }, {
+            "knowledge_id": 3,
+            "question": "问题3",
+            "answer": "问题答案"
+        }
+    ]
+}

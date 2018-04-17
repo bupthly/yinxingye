@@ -1,0 +1,13 @@
+{
+    "result": "ok",
+    "patient_list": [
+        {
+            "birthday": "2000-10-01",
+            "city": "北京",
+            "telephone": "13521904856",
+            "relation": "父亲",
+            "gender": "女孩",
+            "name": "小王"
+        }
+    ]
+}

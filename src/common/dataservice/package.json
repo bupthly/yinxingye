@@ -1,0 +1,20 @@
+{
+  "name": "@sunl-fe/dataservice",
+  "version": "2.3.5",
+  "description": "make request",
+  "main": "dataService.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "http://172.16.117.224/dubin/dubin.git"
+  },
+  "keywords": [
+    "fetch"
+  ],
+  "dependencies": {
+    "promise-polyfill": "6.0.2",
+    "whatwg-fetch": "2.0.3"
+  },
+  "maintainers":[{"name":"Bin Du","email":"dubin@sunlands.com"}],
+  "author": "Bin Du"
+}

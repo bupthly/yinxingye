@@ -1,0 +1,195 @@
+.container {
+    background: #f0eff5;
+    padding-bottom: 50px;
+    overflow: hidden;
+    word-break: break-word;
+}
+.title {
+    margin-bottom: 40px;
+    color: #323232;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    word-break: break-word;
+}
+.content {
+    color: #323232;
+    font-size: 30px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+.user-name {
+    color: #343f52;
+    font-size: 26px;
+}
+.user-info-panel {
+    .avatar {
+        width: 64px;
+        height: 64px;
+        float: left;
+        margin-right: 14px;
+        border-radius: 32px;
+        -webkit-border-radius: 32px;
+    }
+    .info-panel--top {
+        color: #343f52;
+        font-size: 26px;
+    }
+    .info-panel--bottom {
+        color: #888;
+        font-size: 22px;
+        margin-top: 8px;
+    }
+
+    margin-bottom: 40px;
+    position: relative;
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+.post-master {
+    background: #fff;
+    padding: 28px 20px 0;
+    margin-bottom: 20px;
+}
+.master-footer {
+    font-size: 22px;
+    overflow: hidden;
+    line-height: 40px;
+    padding-bottom: 20px;
+}
+.footer--left {
+    line-height: 40px;
+    float: left;
+    color: #999;
+}
+.footer--right {
+    float: right;
+    line-height: 40px;
+    color: #323232;
+}
+.icon {
+    display: block;
+}
+.icon--vip {
+    width: 30px;
+    height: 30px;
+    background: url('../../images/vip.png');
+    background-size: 100% 100%;
+    composes: psa from './common.less';
+    top: 40px;
+    left: 40px;
+}
+.icon--teacher {
+    width: 30px;
+    height: 30px;
+    background: url('../../images/teacher.png');
+    background-size: 100% 100%;
+    composes: psa from './common.less';
+    top: 40px;
+    left: 40px;
+}
+.icon--praise {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('../../images/praise.png');
+    background-size: 100% 100%;
+}
+.icon--reply {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url('../../images/reply.png');
+    background-size: 100% 100%;
+}
+.post-slave {
+    background: #fff;
+    padding: 24px 20px 0;
+    margin-bottom: 20px;
+}
+.reply-container {
+    background: #f7f7f7;
+    margin: 0 -20px;
+    padding: 8px 20px 0;
+}
+.reply-item {
+    line-height: 42px;
+    margin-bottom: 16px;
+    font-size: 26px;
+
+    .emotion {
+        position: relative;
+        top: -2px;
+    }
+}
+.text--lv {
+    width: 64px;
+    text-align: center;
+    border-radius: 12px;
+    height: 24px;
+    font-size: 22px;
+    display: inline-block;
+    margin-left: 8px;
+}
+.text--bluebg {
+    color: #fff;
+    background: #6dc2ff;
+}
+.text--pinkbg {
+    color: #fff;
+    background: #e26666;
+    margin: 0 4px;
+    border-radius: 8px;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+}
+.text--redbg {
+    color: #fff;
+    background: #ce0000;
+}
+.text-darkredbg {
+    color: #fff;
+    background: #FF9865;
+}
+.text--yellowbg {
+    color: #fff;
+    background: #f9a84f;
+}
+.text--gray {
+    color: #888;
+}
+.emotion {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+.img {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block!important;
+}
+.num {
+    vertical-align: top;
+}
+.num--mr20 {
+    vertical-align: top;
+    composes: mr20 from './common.less';
+}
+
+.more {
+    
+}
+
+
+
+
