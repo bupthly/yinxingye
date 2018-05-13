@@ -6,6 +6,7 @@ import Main from './containers/Main'
 import Answers from './containers/answers'
 import QuestionList from './containers/questionList'
 import Question from './containers/question'
+import QuestionAdd from './containers/questionAdd'
 import KnowledgeList from './containers/knowledgeList'
 import Knowledge from './containers/knowledge'
 import Info from './containers/info'
@@ -33,6 +34,9 @@ const routes = [{
       }, {
         path: '/question/:question_id',
         component: Question
+      }, {
+        path: '/questionAdd',
+        component: QuestionAdd
       }, {
         path: '/knowledgeList',
         component: KnowledgeList
