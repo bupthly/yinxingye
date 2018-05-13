@@ -2,6 +2,9 @@ const URLS =  {
     GET_KNOWLEDGE_LIST: '/api/knowledge_get.json',
     GET_KNOWLEDGE_DETAIL: '/api/knowledge_detail.json',
     GET_PATIENT_INFO: '/api/patient.json',
+    GET_QUESTION_LIST: '/api/get_question_list.json',
+    GET_QUESTION_ANSWERS: '/api/get_question_answers.json',
+    GET_QUESTION_DETAIL: '/api/get_question_answers.json',
     //获取话题下的帖子列表
     GET_POST_BY_TOPIC_URL: '/community-pc-war/post/getPostByTopic.action',
     //根据群发批次获取详情

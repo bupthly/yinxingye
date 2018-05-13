@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-// import {getJSON} from './common/dataService';
-// import {envCfg} from './common/envCfg';
-// import global from './common/global';
-// import util from './common/util';
-// import URLS from './constants/URLS';
-
 //main
 import Main from './containers/Main'
 import Answers from './containers/answers'
-import Questions from './containers/questions'
+import QuestionList from './containers/questionList'
+import Question from './containers/question'
 import KnowledgeList from './containers/knowledgeList'
 import Knowledge from './containers/knowledge'
 import Info from './containers/info'
@@ -33,8 +28,11 @@ const routes = [{
             stat();
         }
       }, {
-        path: '/questions',
-        component: Questions
+        path: '/questionList',
+        component: QuestionList
+      }, {
+        path: '/question/:question_id',
+        component: Question
       }, {
         path: '/knowledgeList',
         component: KnowledgeList

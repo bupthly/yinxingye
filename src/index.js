@@ -31,8 +31,8 @@ getJSON.initHttpDTO({
 // Store
 
 
-// const middlewares = [createSagaMiddleware(sagas)];
-const middlewares = [];
+const middlewares = [createSagaMiddleware(sagas)];
+// const middlewares = [];
 
 //FIXME for test
 if (module.hot) {

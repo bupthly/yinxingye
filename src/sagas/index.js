@@ -10,6 +10,5 @@ export default function* root() {
     for(var key in context(keys[i])){
        yield fork(context(keys[i])[key]);
     }
-   
   }
 }
