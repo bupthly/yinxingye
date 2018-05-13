@@ -9,6 +9,9 @@ import { hashHistory } from 'react-router'
 
 import URLS from 'constants/URLS'
 import {getJSON} from 'common/dataservice'
+
+import Button from 'components/Button'
+
 import styles from './index.less'
 
 class Index extends Component {
@@ -59,7 +62,7 @@ class Index extends Component {
                     <h1 className={styles.title}>请填写问题相关描述信息（选填）</h1>
                     <textarea name="content" className={styles.textarea} onChange={this.handleContentChange} value={content}></textarea>
                 </div>
-                <div className={styles.btn} onClick={this.addQuestion}>提交</div>
+                <Button onClick={this.addQuestion} text={'提交'}/>
             </div>
         );
     }

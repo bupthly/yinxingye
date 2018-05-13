@@ -14,6 +14,8 @@ import Button from 'components/Button'
 import URLS from 'constants/URLS'
 import {getJSON} from 'common/dataservice'
 
+import styles from './index.less'
+
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -39,24 +41,54 @@ class Index extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    姓名：{this.state.name}
+            <div className={styles.wrapper}>
+                <div className={styles.panel}>
+                    <div className={styles['left-part']}>
+                        姓名
+                    </div>
+                    <div className={styles['right-part']}>
+                        {this.state.name}
+                    </div>
                 </div>
-                <div>
-                    出生年月：{this.state.birthday}
+                <div className={styles.panel}>
+                    <div className={styles['left-part']}>
+                        出生年月
+                    </div>
+                    <div className={styles['right-part']}>
+                        {this.state.birthday}
+                    </div>
                 </div>
-                <div>
-                    性别：{this.state.gender}
+                <div className={styles.panel}>
+                    <div className={styles['left-part']}>
+                        性别
+                    </div>
+                    <div className={styles['right-part']}>
+                        {this.state.gender}
+                    </div>
                 </div>
-                <div>
-                    与患者关系：{this.state.relation}
+                <div className={styles.panel}>
+                    <div className={styles['left-part']}>
+                        与患者关系
+                    </div>
+                    <div className={styles['right-part']}>
+                        {this.state.relation}
+                    </div>
                 </div>
-                <div>
-                    所在城市：{this.state.city}
+                <div className={styles.panel}>
+                    <div className={styles['left-part']}>
+                        所在城市
+                    </div>
+                    <div className={styles['right-part']}>
+                        {this.state.city}
+                    </div>
                 </div>
-                <div>
-                    手机号：{this.state.telephone}
+                <div className={styles.panel}>
+                    <div className={styles['left-part']}>
+                        手机号
+                    </div>
+                    <div className={styles['right-part']}>
+                        {this.state.telephone}
+                    </div>
                 </div>
                 <Button text="保存"/>
             </div>
