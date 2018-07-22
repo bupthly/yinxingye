@@ -30,12 +30,13 @@ module.exports = {
     noInfo: false,
     proxy: {
     '/api/*': {
-      target: 'http://localhost:' + defaultSettings.port,
+      // target: 'http://localhost:' + defaultSettings.port,
+      target: 'http://47.94.219.183:3000',
       // target: 'http://172.16.116.136:7080',
       pathRewrite: function(path, req) {
           // return path;
           // return path.replace(/^\/community-pc-war/, '/community-sv-war').replace('.action', '');
-          return path.replace(/^\/api/, '/testdata/api').replace('.action', '');
+          return path.replace(/^\/api/, '/mock/9').replace('.json', '');
       },
       onProxyReq: function(proxyReq, req, res) {
           // proxyReq.method = 'POST';
