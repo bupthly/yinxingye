@@ -13,14 +13,16 @@ import ScrollPanel from 'components/ScrollPanel'
 import URLS from 'constants/URLS'
 import {getJSON} from 'common/dataservice'
 import styles from 'styles/less/common.less'
+import pageStyles from 'styles/less/page.less';
 
+const PAGE_SIZE = 10;
 class Index extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             list: [],
-            pageNum: 1,
+            pageNum: 0,
             isFetching: false, //是否正在拉取数据
             hasEnd: false
         }
@@ -38,7 +40,8 @@ class Index extends Component {
 
         const {pageNum} = this.state;
         getJSON(URLS.GET_KNOWLEDGE_LIST, {
-            pageNum
+            pagenum: pageNum,
+            pagesize: PAGE_SIZE
         }, {
             method: 'get'
         }).then(rs => {
@@ -48,7 +51,7 @@ class Index extends Component {
                 list: [...list, ...knowledge_list],
                 isFetching: false,
                 pageNum: pageNum + 1,
-                hasEnd: knowledge_list.length < 10
+                hasEnd: knowledge_list.length < PAGE_SIZE
             })
         }).catch(_ => {
             this.setState({
@@ -74,8 +77,8 @@ class Index extends Component {
             const {knowledge_id, question, answer} = item;
             return (
                 <Panel key={index} onClick={_ => this.gotoDetailPage(knowledge_id)}>
-                    <div className={`${styles.fb} ${styles.mb10}`}>{question}</div>
-                    <div className={styles.gray6}>{answer}</div>
+                    <div className={`${styles.fb} ${styles.mb10} ${pageStyles.title}`}>{question}</div>
+                    <div className={`${styles.gray6} ${pageStyles.content}`}>{answer}</div>
                 </Panel>
             )
         })

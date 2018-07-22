@@ -31,7 +31,7 @@ class Index extends Component {
     getData() {
         const {knowledge_id} = this.props.params;
         getJSON(URLS.GET_KNOWLEDGE_DETAIL, {
-            knowledge_id
+            kid: knowledge_id
         }, {
             method: 'get'
         }).then(rs => {

@@ -12,15 +12,20 @@ import ScrollPanel from 'components/ScrollPanel'
 
 import URLS from 'constants/URLS'
 import {getJSON} from 'common/dataservice'
-import {GET_QUESTION_LIST_REQUESTED} from 'constants/question'
+import util from 'common/util';
 import styles from 'styles/less/common.less'
+import questionStyles from 'styles/less/question.less'
 
+const PAGE_SIZE = 10;
+const CURRENT_TIME = util.getDate();
 class Index extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             isFetching: false, //是否正在拉取数据
+            pageNum: 0,
+            list: [],
         }
     }
 
@@ -34,17 +39,29 @@ class Index extends Component {
             isFetching: true
         })
 
-        const {dispatch, pageNum} = this.props;
-        dispatch({
-            type: GET_QUESTION_LIST_REQUESTED,
-            payload: {
-                pageNum,
-                callback: _ => {
-                    this.setState({
-                        isFetching: false
-                    })
-                }
+        const {pageNum, list} = this.state;
+
+        getJSON(URLS.GET_QUESTION_LIST, {
+            page_num: pageNum,
+            page_size: PAGE_SIZE,
+            search_key: '',
+            quer_dt: CURRENT_TIME
+        }, {
+            method: 'get'
+        }).then(rs => {
+            if (rs.result === 'ok') {
+                const {question_list} = rs;
+                this.setState({
+                    list: [...list, ...question_list],
+                    isFetching: false,
+                    pageNum: pageNum + 1,
+                    hasEnd: question_list.length < PAGE_SIZE
+                })
             }
+        }).catch(_ => {
+            this.setState({
+                isFetching: false
+            })
         })
     }
 
@@ -59,22 +76,25 @@ class Index extends Component {
     }
 
     renderList() {
-        const {list} = this.props;
+        const {list} = this.state;
 
         return list.map((item, index) => {
-            const {question_id, question_title, question_content} = item;
+            const {question_name, question_dt, question_id, question_title, question_content} = item;
             return (
                 <Panel key={index} onClick={_ => this.gotoDetailPage(question_id)}>
-                    <div className={`${styles.fb} ${styles.mb10}`}>{question_title}</div>
-                    <div className={styles.gray6}>{question_content}</div>
+                    <div className={questionStyles['user-panel']}>
+                        <span className={questionStyles['user-icon']}></span>
+                        <span className={questionStyles.text}>{question_name}&nbsp;{question_dt}</span>
+                    </div>
+                    <div className={`${styles.fb} ${styles.mb10} ${questionStyles.title}`}>{question_title}</div>
+                    <div className={`${questionStyles.content} ${styles.gray6}`}>{question_content}</div>
                 </Panel>
             )
         })
     }
 
     render() {
-        const { isFetching } = this.state;
-        const { hasEnd } = this.props;
+        const { isFetching, hasEnd } = this.state;
         return (
             <ScrollPanel
                 onScrollFetch={this.getMore}

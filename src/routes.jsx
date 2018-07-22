@@ -14,38 +14,40 @@ import Info from './containers/info'
 const routes = [{
     path: '/',
     component: Main,
-    indexRoute: {component: Main},
+    indexRoute: {component: KnowledgeList},
+    showFooter: true,
     childRoutes: [
       {
         path: '/answers',
         component: Answers,
-        // getComponent: (nextState, cb) {
-        //     System.import('./containers/answers', mod => {
-
-        //     })
-        // }
-        // component: Answers,
         onEnter: (nextState, replace) => {
             stat();
-        }
+        },
+        showFooter: false
       }, {
         path: '/questionList',
-        component: QuestionList
+        component: QuestionList,
+        showFooter: true
       }, {
         path: '/question/:question_id',
-        component: Question
+        component: Question,
+        showFooter: false
       }, {
         path: '/questionAdd',
-        component: QuestionAdd
+        component: QuestionAdd,
+        showFooter: false
       }, {
         path: '/knowledgeList',
-        component: KnowledgeList
+        component: KnowledgeList,
+        showFooter: true
       }, {
         path: '/knowledge/:knowledge_id',
-        component: Knowledge
+        component: Knowledge,
+        showFooter: false
       }, {
         path: '/info',
-        component: Info
+        component: Info,
+        showFooter: false
       }
     ]
   }
